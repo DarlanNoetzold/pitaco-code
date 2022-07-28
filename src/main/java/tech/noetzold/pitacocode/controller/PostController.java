@@ -57,14 +57,13 @@ public class PostController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<Post> save(@RequestBody Post post, HttpServletRequest request, HttpServletResponse response) {
         try {
-            post.set(imagemService.findById(post.getImagem().getId()).get());
             post.setData_cadastro(Calendar.getInstance());
             post = alertaService.save(post);
             return new ResponseEntity<Post>(post, HttpStatus.CREATED);
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return new ResponseEntity<Alerta>(alerta, HttpStatus.UNPROCESSABLE_ENTITY);
+        return new ResponseEntity<Post>(post, HttpStatus.UNPROCESSABLE_ENTITY);
     }
     @GetMapping("remover/{id}")
     public String remover(@PathVariable("id") Long id) {
