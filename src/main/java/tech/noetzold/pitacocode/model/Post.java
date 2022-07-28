@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Calendar;
 import java.util.Set;
 
@@ -23,4 +24,8 @@ public class Post {
     @Temporal(TemporalType.DATE)
     @Column(name = "data_cadastro", nullable = false)
     private Calendar data_cadastro;
+
+    @NotNull
+    @ManyToOne(cascade=CascadeType.PERSIST)
+    private Usuario usuario;
 }
