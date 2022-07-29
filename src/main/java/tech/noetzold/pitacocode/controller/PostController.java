@@ -19,7 +19,7 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@RequestMapping("/alerta")
+@RequestMapping("/post")
 public class PostController {
 
     @Autowired
