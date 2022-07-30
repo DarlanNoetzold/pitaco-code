@@ -1,6 +1,7 @@
 package tech.noetzold.pitacocode.model;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Type;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -19,8 +20,11 @@ public class Answer {
     private Post post;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_cadastro", nullable = false)
-    private Calendar data_cadastro;
+    @Column(name = "date_register", nullable = false)
+    private Calendar date_register;
+
+    @Type(type="text")
+    private String suggestion;
 
     @NotNull
     @ManyToOne(cascade=CascadeType.PERSIST)
@@ -42,14 +46,6 @@ public class Answer {
         this.post = post;
     }
 
-    public Calendar getData_cadastro() {
-        return data_cadastro;
-    }
-
-    public void setData_cadastro(Calendar data_cadastro) {
-        this.data_cadastro = data_cadastro;
-    }
-
     public Usuario getUsuario() {
         return usuario;
     }
@@ -58,5 +54,19 @@ public class Answer {
         this.usuario = usuario;
     }
 
+    public Calendar getDate_register() {
+        return date_register;
+    }
 
+    public void setDate_register(Calendar date_register) {
+        this.date_register = date_register;
+    }
+
+    public String getSuggestion() {
+        return suggestion;
+    }
+
+    public void setSuggestion(String suggestion) {
+        this.suggestion = suggestion;
+    }
 }

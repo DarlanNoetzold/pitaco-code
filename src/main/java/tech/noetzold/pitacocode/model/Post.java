@@ -15,6 +15,8 @@ public class Post {
     @GenericGenerator(name = "increment", strategy = "increment")
     private Long id;
 
+    private String title;
+
     @Type(type="text")
     private String code;
 
@@ -22,8 +24,8 @@ public class Post {
     private Set<Answer> answers;
 
     @Temporal(TemporalType.DATE)
-    @Column(name = "data_cadastro", nullable = false)
-    private Calendar data_cadastro;
+    @Column(name = "date_register", nullable = false)
+    private Calendar date_register;
 
     @NotNull
     @ManyToOne(cascade=CascadeType.PERSIST)
@@ -53,19 +55,23 @@ public class Post {
         this.answers = answers;
     }
 
-    public Calendar getData_cadastro() {
-        return data_cadastro;
-    }
-
-    public void setData_cadastro(Calendar data_cadastro) {
-        this.data_cadastro = data_cadastro;
-    }
-
     public Usuario getUsuario() {
         return usuario;
     }
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public void setDate_register(Calendar date_register) {
+        this.date_register = date_register;
     }
 }
