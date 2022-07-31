@@ -27,6 +27,9 @@ public class Answer {
     private String suggestion;
 
     @NotNull
+    private String title_suggestion;
+
+    @NotNull
     @ManyToOne(cascade=CascadeType.PERSIST)
     private Usuario usuario;
 
@@ -68,5 +71,13 @@ public class Answer {
 
     public void setSuggestion(String suggestion) {
         this.suggestion = suggestion;
+    }
+
+    public String getTitle_suggestion() {
+        return title_suggestion;
+    }
+
+    public void setTitle_suggestion(String title_suggestion) {
+        this.title_suggestion = title_suggestion;
     }
 }
