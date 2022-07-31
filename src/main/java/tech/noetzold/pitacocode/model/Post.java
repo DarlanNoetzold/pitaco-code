@@ -34,6 +34,9 @@ public class Post {
     @Enumerated(EnumType.STRING)
     private ProgrammingLanguage programmingLanguage;
 
+    @Enumerated(EnumType.STRING)
+    private TechnologyType technologyType;
+
     public Long getId() {
         return id;
     }
@@ -76,5 +79,25 @@ public class Post {
 
     public void setDate_register(Calendar date_register) {
         this.date_register = date_register;
+    }
+
+    public Calendar getDate_register() {
+        return date_register;
+    }
+
+    public ProgrammingLanguage getProgrammingLanguage() {
+        return programmingLanguage;
+    }
+
+    public void setProgrammingLanguage(ProgrammingLanguage programmingLanguage) {
+        this.programmingLanguage = programmingLanguage;
+    }
+
+    public TechnologyType getTechnologyType() {
+        return technologyType;
+    }
+
+    public void setTechnologyType(TechnologyType technologyType) {
+        this.technologyType = technologyType;
     }
 }
