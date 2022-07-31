@@ -31,6 +31,9 @@ public class Post {
     @ManyToOne(cascade=CascadeType.PERSIST)
     private Usuario usuario;
 
+    @Enumerated(EnumType.STRING)
+    private ProgrammingLanguage programmingLanguage;
+
     public Long getId() {
         return id;
     }
