@@ -53,7 +53,7 @@ public class PostController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<Post> save(@RequestBody Post post, HttpServletRequest request, HttpServletResponse response) {
         try {
-            post.setData_cadastro(Calendar.getInstance());
+            post.setDate_register(Calendar.getInstance());
             post = postService.save(post);
             return new ResponseEntity<Post>(post, HttpStatus.CREATED);
         } catch (Exception e) {
