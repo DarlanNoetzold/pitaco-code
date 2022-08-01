@@ -42,7 +42,7 @@ public class PostController {
 
     @Transactional
     @RequestMapping(value = "/usuario/{usuario}", method = RequestMethod.GET)
-    public ResponseEntity<Collection<Post>> getPostUsuario(@PathVariable("usuario") String usuario) {
+    public ResponseEntity<Collection<Post>> getPostUsuario(@PathVariable("usuario") Integer usuario) {
 
         List<Post> posts = postService.findAllByUsuario(usuario);
 

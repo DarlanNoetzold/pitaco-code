@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface PostService extends JpaRepository<Post, Long> {
     @Query("select p from Post p where p.usuario = ?1")
-    List<Post> findAllByUsuario(String usuario);
+    List<Post> findAllByUsuario(Integer usuario);
 }
