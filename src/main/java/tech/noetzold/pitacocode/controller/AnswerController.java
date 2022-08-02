@@ -26,9 +26,9 @@ public class AnswerController {
         return new ResponseEntity<Collection<Answer>>(imagemService.findAll(), HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/get/{nome}", method = RequestMethod.GET)
+    @RequestMapping(value = "/get/{id}", method = RequestMethod.GET)
     @Transactional
-    public ResponseEntity<Answer> getImagemById(@PathVariable("nome") long id) {
+    public ResponseEntity<Answer> getImagemById(@PathVariable("id") long id) {
 
         Answer answer = imagemService.findById(id).get();
 
