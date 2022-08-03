@@ -44,6 +44,7 @@ public class AnswerController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<Answer> save(@RequestBody Answer answer) {
         try {
+            answer.setDate_register(Calendar.getInstance());
             answer.setPost(postService.findById(answer.getPost().getId()).get());
             answer = answerService.save(answer);
             return new ResponseEntity<Answer>(answer, HttpStatus.CREATED);
