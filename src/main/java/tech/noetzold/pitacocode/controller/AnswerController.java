@@ -12,6 +12,7 @@ import tech.noetzold.pitacocode.service.PostService;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Calendar;
 import java.util.Collection;
 
 @CrossOrigin
@@ -43,6 +44,7 @@ public class AnswerController {
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<Answer> save(@RequestBody Answer answer) {
         try {
+            answer.setDate_register(Calendar.getInstance());
             answer.setPost(postService.findById(answer.getPost().getId()).get());
             answer = answerService.save(answer);
             return new ResponseEntity<Answer>(answer, HttpStatus.CREATED);
