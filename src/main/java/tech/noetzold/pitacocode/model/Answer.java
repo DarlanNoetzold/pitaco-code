@@ -62,7 +62,7 @@ public class Answer {
     }
 
     public void setDate_register(Calendar date_register) {
-        this.date_register = date_register;
+        this.date_register = Calendar.getInstance();
     }
 
     public String getSuggestion() {
