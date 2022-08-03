@@ -19,9 +19,6 @@ public class Post {
     @Type(type="text")
     private String code;
 
-    @OneToMany(mappedBy = "post", fetch = FetchType.LAZY, cascade = {CascadeType.DETACH})
-    private Set<Answer> answers;
-
     @Temporal(TemporalType.DATE)
     @Column(name = "date_register", nullable = false)
     private Calendar date_register;
@@ -50,14 +47,6 @@ public class Post {
 
     public void setCode(String code) {
         this.code = code;
-    }
-
-    public Set<Answer> getAnswers() {
-        return answers;
-    }
-
-    public void setAnswers(Set<Answer> answers) {
-        this.answers = answers;
     }
 
     public Usuario getUsuario() {
