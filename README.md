@@ -8,6 +8,7 @@
 
 ## Projeto:
 * Projeto de Prova de conceito para o desenvolvimento de um projeto de Review de códigos com sugestões de melhoramento;
+* Revisão de código.
 
 ---
 ## API:
